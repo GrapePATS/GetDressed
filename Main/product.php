@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Page</title>
+  <link rel="stylesheet" href="product_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+  
+</head>
+
+<body>
+  
+  <header>
+    <nav class = "Topbar">
+      <div>
+        <a href = "/Home.php">
+          <i class="fa-solid fa-arrow-left-long"></i>
+        </a>
+      </div>
+      <a href = "index.html" class = "navbar-brand">
+        <img src = "AppLogo.jpg" alt = "site icon" id="Logo">
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="productdetail">
+    <?php
+    // Connect to server and select database.
+        include("config.php");
+        $ID = $_GET['id'];
+
+        $sql = "SELECT * FROM dresses WHERE ID = $ID";
+        $result = $objCon->query($sql);
+        
+        ?>
+
+        <?php while($row = $result->fetch_assoc()): ?>
+        <?php $imageURL = 'Dress/'.$row['Pic_Dress']; ?>
+        <img src="<?php echo $imageURL; ?>" width="100%" id="MainImg" alt=""> <?php endwhile ?>
+
+    <!--  <div class="morepic">
+        <img src="1001.JPG" width="100%" id="MainImg" alt="">
+        <div class="sub-img-group">
+          <div class="sub-img-col">
+          <img src="1001.JPG" width="100%" id="MainImg" class="subIMG" alt="">
+          </div>
+          <div class="sub-img-col">
+            <img src="1001.JPG" width="100%" id="MainImg" class="subIMG" alt="">
+          </div>
+          <div class="sub-img-col">
+            <img src="1001.JPG" width="100%" id="MainImg" class="subIMG" alt="">
+          </div>
+          
+        </div>
+      </div>
+        -->
+      <div>
+        <h4>#Rectangle</h4>
+        <h1>เสื้อ Baby tee</h1>
+        <span>
+          : to define or originate (something, such as a mathematical or linguistic set or structure) by the application of one or more rules or operations
+          especially : to trace out (something, such as a curve) by a moving point or to trace out (a surface) by a moving curve</span>
+        <div>
+          <br>
+          <h3>Size : <select>
+            <option>select size</option>
+          </select>
+          </h3>
+        </div>
+        <div><h3>Color : </h3></div>
+        <div class = "color-groups">
+          <div class = "color color-white active-color"></div>
+          <div class = "color color-black"></div>
+          <div class = "color color-yellow"></div>
+          <div class = "color color-blue"></div>
+          <div class = "color color-red"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+      <nav class="BottomBar">
+         <a class="navLink" id="tryBTN" href="trydress.html">Try this &nbsp<i class="fa-solid fa-camera"></i></a></li>
+        <a class="navLink" id="shopBTN" href="shoplink.html">Go to Shop &nbsp<i class="fa-solid fa-bag-shopping"></i></a></li>
+      </nav>
+    <br><br><br>
+  </footer>
+  <script src="function.js"></script>
+  
+</body>
+</html>
+
+

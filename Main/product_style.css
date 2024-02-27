@@ -1,0 +1,165 @@
+img {
+    border-radius: 10px;
+    object-fit: cover; /* This will make sure the images maintain their proportions */
+
+    }
+.column {
+    float: left;
+    width: 33.33%;
+}
+header{
+    text-align: center;
+    padding: 5px;
+}
+body{
+    background-color: rgb(241, 241, 247);
+}
+div{
+    margin-bottom: 1em;
+}
+a{
+    color: #242424;
+    text-decoration: none;
+}
+a:link { 
+    text-decoration: none; 
+  } 
+  a:visited { 
+    text-decoration: none; 
+  } 
+  a:hover { 
+    text-decoration: none; 
+  } 
+  a:active { 
+    text-decoration: none; 
+  }
+
+#Logo{
+    width: 20%;
+    height: auto;
+    border-radius:40px;
+    display: inline-block;
+    align-items: center;
+}
+section{
+    padding: 10px;
+}
+
+#productdetail .morepic{
+    width: 100% ;
+    align-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.sub-img-group{
+    display: flex;
+    justify-content: space-between;
+}
+.sub-img-col{
+    flex-basis: 32%;
+    cursor: pointer;
+}
+
+
+.color{
+    width: 30px;
+    height: 30px;
+    background: none;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin-right: 12px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+.color-black{
+    background-color: #242424;
+}
+.color-blue{
+    background-color: #085ea0;
+}
+.color-yellow{
+    background-color: #c0b50d;
+}
+.color-red{
+    background-color: #8b0516;
+}
+.color-white{
+    background-color: #ededed;
+}
+.color:hover{
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+}
+.active-color{
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+}
+.color-groups{
+    padding: 1rem 0;
+    display: flex;
+    margin-left: 35px;
+}
+.Topbar{
+    display: flex;
+}
+
+.BottomBar {
+    background-color: #c6c4a3;
+    width: 90%;
+    height: 68px;
+    padding: 0%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 30px;
+}
+
+.BottomBar a {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  padding: 10px;
+  transition: all 0.3s ease;
+  font-size: 18px;
+}
+.BottomBar a:hover{
+    background-color: rgba(255, 255, 255, 0.263) ;
+}
+
+#tryBTN{
+    border-radius: 30px;
+    width:120px;
+    height: auto;
+    border-color: #FEF5E7;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+}
+#shopBTN{
+    border-radius: 30px;
+    width: 120px;
+    height: auto;
+    border-color: #fef5e777;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+}
+.active{
+    color: #242424;
+}
+.navLink{
+    align-items: center;
+    display: flex;
+    color: #242424;
+    font-size: 18px;
+    position: relative;
+    transition: all 0.4s;
+}
+
