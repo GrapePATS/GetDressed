@@ -6,6 +6,8 @@
     <title>Get Dress</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src= homefunction.js></script>
+
 </head>
 <body>
 
@@ -41,16 +43,24 @@
         $sql = "SELECT * FROM dresses";
         $result = $objCon->query($sql);
         
+        
         ?>
 
-        <?php while($row = $result->fetch_assoc()): ?>
+        <?php while($row = $result->fetch_assoc()): 
+          //  $row = $result->fetch_assoc();
+           // print_r($row);
+            ?>
         <?php $imageURL = 'Dress/'.$row['Pic_Dress']; ?>
 
         <div class="product">
+            <!--เพิ่มตรงนี้จากของเฟรชเพื่อเชื่อมไปหน้า product -->
+            <a href="product.php?id=<?php echo $row['ID']?>">
+            <!-- _____________________________________-->
             <img src="<?php echo $imageURL; ?>" alt="Product" width="100%" class= "PicDress">
             <p><?php echo $row['Name_Dress']; ?></p>
             <p class = "Shop"><?php echo $row['Shop']; ?></p>
             <a><i class="bi bi-heart"></i></a>
+            </a>
         </div>
         <?php endwhile ?>
 
