@@ -68,10 +68,10 @@
     
     <nav class="menu">
         <div class="main">
-            <a href="Home.html">
+            <a href="Home.php">
                 <i class="bi bi-house-door-fill"></i>
             </a>
-            <a href="Like.html">
+            <a href="Like.php">
                 <i class="bi bi-heart"></i>
             </a>
             <a>
