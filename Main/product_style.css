@@ -51,6 +51,7 @@ section{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    padding: auto;
 }
 .sub-img-group{
     display: flex;

@@ -31,10 +31,24 @@
     // เชื่อมกับดาต้าเบส(Table dresses)
         include("config.php");
         $ID = $_GET['id'];
-
-         // Query data ดึงข้อมูลเฉพาะที่ ID เท่ากับ $ID(ตัวแปรที่รับมาจากหน้าหลัก)
+        
+        if(isset($_GET['id_Type'])) {
+          $Body = $_GET['id_Type'];
+          $sql = "SELECT * FROM dresses WHERE BDType = '$Body'";
+          $result = $objCon->query($sql);
+      } else {
         $sql = "SELECT * FROM dresses WHERE ID = $ID";
         $result = $objCon->query($sql);
+      }
+          $sqltype = "SELECT * FROM bdtype"; //สร้างอีกตาราง ชื่อ bdtype ที่มีเฉพาะหมวดหมู่ของรูปร่างเท่านั้น
+          $resulttype = $objCon->query($sqltype);
+
+         // Query data ดึงข้อมูลเฉพาะที่ ID เท่ากับ $ID(ตัวแปรที่รับมาจากหน้าหลัก)
+        //$sql = "SELECT * FROM dresses WHERE ID = $ID";
+        //$result = $objCon->query($sql);
+        // Query data ดึงข้อมูลจากตาราง ชื่อ bdtype (มีข้อมูลเฉพาะหมวดหมู่ของรูปร่าง)
+       // $sqltype = "SELECT * FROM bdtype WHERE BDType = $Shape"; 
+        //$resulttype = $objCon->query($sqltype);
     ?> 
     <?php while($row = $result->fetch_assoc()): ?>
     <?php // กำหนดตัวแปรข้อมูล
@@ -60,8 +74,15 @@
       </div>
      
       <div>
-        <a href="LinktoEachShape.php?id=<?php echo $Shape?>"> <!--แท็กรูปร่าง(จะกดลิ้งไปยังหน้าหลักที่แยกตามรูปร่างนั้นๆได้)--> 
-        <h4>#<?php echo $Shape;?> </h4> </a> 
+        <!--แสดง tag shape (Link ไป main ได้)--> 
+      <?php while($rowtype = $resulttype->fetch_assoc()): ?>
+      <?php if($rowtype['BDType']==$Shape): ?>
+      <a href="Home.php?id_Type=<?php echo $rowtype['BDType']; ?>">
+      <h4>#<?php echo $Shape; ?></h4>
+      </a>
+      <?php endif; ?>
+      <?php endwhile; ?>
+      
         <!--แสดงผลชื่อ,ข้อมูลเสื้อผ้า--> 
         <h1><?php echo $row['Name_Dress'];?></h1>
         <span><p><?php echo $row['Detail'];?></p></span>
