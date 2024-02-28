@@ -1,3 +1,19 @@
+<?php
+    // Connect to server and select database.
+        include("config.php");
+    // เมื่อมีการรับค่าจากหมวดหมู่ ค่าจะแทนใน$Body แล้วเลือกหมวดที่ต้องการ
+    if(isset($_GET['id_Type'])) {
+        $Body = $_GET['id_Type'];
+        $sql = "SELECT * FROM dresses WHERE BDType = '$Body'";
+        $result = $objCon->query($sql);
+    } else {
+        $sql = "SELECT * FROM dresses";
+        $result = $objCon->query($sql);
+    }
+        $sqltype = "SELECT * FROM bdtype"; //สร้างอีกตาราง ชื่อ bdtype ที่มีเฉพาะหมวดหมู่ของรูปร่างเท่านั้น
+        $resulttype = $objCon->query($sqltype);
+?>
+        
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,32 +39,22 @@
         </form>
 
         <nav>
-            <div class="bodytype">
-                <a id="dresses">All</a>
-                <a id="apple">Apple</a>
-                <a id="hourglass">Hourglass</a>
-                <a id="IT">Inverted triangle</a>
-                <a id="pear">Pear</a>
-                <a id="rectangle">Rectangle</a>
+           <div class="bodytype">
+            <a href="Home.php">  All  </a>
+            <?php while($rowtype = $resulttype->fetch_assoc()): ?>
+                <a href="Home.php?id_Type=<?php echo $rowtype['BDType'];?>"> <?php echo $rowtype['BDType']; ?> </a>
+            <?php endwhile ?>
+
             </div>
         </nav>
     </header>
 
     <section>
-        <?php
-    // Connect to server and select database.
-        include("config.php");
-
-        $sql = "SELECT * FROM dresses";
-        $result = $objCon->query($sql);
-        
-        
-        ?>
 
         <?php while($row = $result->fetch_assoc()): 
           //  $row = $result->fetch_assoc();
            // print_r($row);
-            ?>
+        ?>
         <?php $imageURL = 'Dress/'.$row['Pic_Dress']; ?>
 
         <div class="product">
