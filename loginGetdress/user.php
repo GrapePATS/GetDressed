@@ -1,4 +1,4 @@
-<?php 
+<?php //หน้า Welcome ของ User
 
     session_start();
     require_once 'config/db.php';
@@ -31,17 +31,21 @@
         ?>
         <img src="logo.png" height="250" width="250"style="display: block; margin: 0 auto;">
         <div style="text-align: center;">
-            <h3 class="mt-4">Welcome, <?php echo $row['firstname'] . ' ' . $row['lastname'] ?></h3>
-            <h1 class="mt-4" style="font-size: 24px; font-family: 'Arial', sans-serif; color: #333; font-weight: normal;">let's find your style and make yourself</h1>
+            <h1 class="mt-4">Welcome, <?php echo $row['firstname'] . ' ' . $row['lastname'] ?></h1>
+            <!--<h1>Welcome to</h1>
+            <h1>Get Dressed</h1>-->
+            <h1 class="mt-4" style="font-size: 24px; font-family: 'Arial', sans-serif; color: #333; font-weight: normal;">Let's find your style and make yourself</h1>
             <h1 class="mt-4" style="font-size: 24px; font-family: 'Arial', sans-serif; color: #333; font-weight: normal;">more confident</h1>  
         </div>
         <br>  
         <div style="text-align: center;">
             <a href="/Getdressed/Main/Home.php" class="btn btn-primary" style="background-color: #C08552; display: inline-block; font-size: 24px;">Get started</a>
         </div>
-        <div> 
-            <a href="logout.php" class="btn btn-danger">Logout</a>
+        <div>
+        <a href="logout.php" class="btn btn-danger">Logout</a>
         </div>
     </div>
+    <script src='scrollFunction.js'></script>
 </body>
 </html>
+
