@@ -35,13 +35,18 @@
                 <h for="Centimeter">Inch</h>
             </div>
             <div>
-            <button type="submit" id="calculate">CALCULATE</button>
+            <button type="submit" id="calculate" onclick="calculateShape()">CALCULATE</button>
             <button type="reset" id="clear">CLEAR</button>
             <!--<button type="button" id="calculate">CALCULATE</button>
             <button type="reset" id="clear">CLEAR</button>-->
             </div>
             <ad>1 Inch = 2.54 Centimeters</ad>
+            <p id="resultDisplay"></p>
         </form>
 
+
+
 </body>
+<script src="getshape.js"></script>
+
 </html>

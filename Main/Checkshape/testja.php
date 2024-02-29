@@ -20,10 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($objCon->query($sql) === TRUE) {
         echo "Record added successfully";
+        
+
+        header("location: testinputshape.php");
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
+        header("location: testinputshape.php");
     }
-
     // Close the connection
     $objCon->close();
 }
