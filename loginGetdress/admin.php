@@ -1,4 +1,5 @@
 <?php 
+//หน้า Welcome ของ Admin
 
     session_start();
     require_once 'config/db.php';

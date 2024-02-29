@@ -1,4 +1,4 @@
-<?php 
+<?php //ระบบของเข้าสู่ระบบ
 
     session_start();
     require_once 'config/db.php';
