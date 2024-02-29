@@ -71,7 +71,6 @@
       </div>
      
       <div>
-<<<<<<< Updated upstream
         <!--แสดง tag shape (Link ไป main ได้)--> 
       <?php while($rowtype = $resulttype->fetch_assoc()): ?>
       <?php if($rowtype['BDType']==$Shape): ?>
@@ -81,17 +80,6 @@
       <?php endif; ?>
       <?php endwhile; ?>
       
-=======
-      <!--tag Shape ที่ link to home ได้--> 
-      <?php while($rowtype = $resulttype->fetch_assoc()): ?>
-        <?php if($rowtype['BDType']==$Shape): ?>
-        <a href="Home.php?id_Type=<?php echo $rowtype['BDType']; ?>">
-        <h4>#<?php echo $Shape; ?></h4>
-        </a>
-        <?php endif; ?>
-      <?php endwhile; ?>
-
->>>>>>> Stashed changes
         <!--แสดงผลชื่อ,ข้อมูลเสื้อผ้า--> 
         <h1><?php echo $row['Name_Dress'];?></h1>
         <span><p><?php echo $row['Detail'];?></p></span>
