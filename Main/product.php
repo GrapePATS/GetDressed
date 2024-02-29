@@ -42,11 +42,8 @@
       }
           $sqltype = "SELECT * FROM bdtype"; //สร้างอีกตาราง ชื่อ bdtype ที่มีเฉพาะหมวดหมู่ของรูปร่างเท่านั้น
           $resulttype = $objCon->query($sqltype);
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     ?> 
+    
     <?php while($row = $result->fetch_assoc()): ?>
     <?php // กำหนดตัวแปรข้อมูล
       $imageURL = 'Dress/'.$row['Pic_Dress'];  // : ลิ้ง(ที่อยู่)รูปภาพ 
