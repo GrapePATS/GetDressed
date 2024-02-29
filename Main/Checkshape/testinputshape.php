@@ -14,7 +14,7 @@
 <body>
 
 <form method="post" action="testja.php"> <!-- Assuming your PHP script is in process_form.php -->
- <div class="input-size">
+<div class="input-size">
                 <label for="shoulder">Shoulder:</label>
                 <input type="number" id="shoulder" name="shoulder">
                 <h for="Centimeter">Inch</h>
