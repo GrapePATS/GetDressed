@@ -15,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($objCon->connect_error) {
             die("Connection failed: " . $objCon->connect_error);
         }
-
         // Insert data into the database
         $sql = "INSERT INTO shapedata (shoulder, bust, waist, hip, Shape) VALUES ('$shoulder', '$bust', '$waist', '$hip','$result')";
 
@@ -28,8 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Error occurred while inserting data
             echo "Error: " . $sql . "<br>" . $objCon->error;
         }
-    
             // Close the database connection
-    $objCon->close();
+            $objCon->close();
 }
 ?>

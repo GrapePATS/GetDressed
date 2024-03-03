@@ -13,11 +13,11 @@
 </head>
 <body>
 
-<form action="testja.php" method="post" id="myForm"> <!-- Assuming your PHP script is in process_form.php -->
+<form action="shapeDB.php" method="post" id="myForm"> <!-- Assuming your PHP script is in process_form.php -->
 <div class="input-size">
-                <label for="shoulder">Shoulder:</label>
-                <input type="text" id="shoulder" name="shoulder">
-                <h for="Centimeter">Inch</h>
+            <label for="shoulder">Shoulder:</label>
+            <input type="text" id="shoulder" name="shoulder">
+            <h for="Centimeter">Inch</h>
             </div>
             <div class="input-size">
                 <label for="bust">Bust:</label>
@@ -34,14 +34,13 @@
                 <input type="text" id="hip" name="hip">
                 <h for="Centimeter">Inch</h>
             </div>
-            <div>
-            <!--<button type="submit" id="calculate">CALCULATE</button>
-            <button type="reset" id="clear">CLEAR</button>-->
-            <button type="reset" id="clear">CLEAR</button>
-            </div>
-            <ad>1 Inch = 2.54 Centimeters</ad>
-        </form>
+    
+        <div>
         <button type="button" id="calculate" onclick="calculateShape()">CALCULATE</button>
+        <button type="reset" id="clear">CLEAR</button>
+        </div>
+        </form>
+        <ad>1 Inch = 2.54 Centimeters</ad>
 </body>
 <script src="getshape.js"></script>
 
