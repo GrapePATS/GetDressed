@@ -27,43 +27,49 @@ function calculateShape() {
   const result = getShape(parseInt(shoulder), parseInt(bust), parseInt(waist), parseInt(hip));
   console.log(result);
 
+  // Send the result data to the PHP file as a form field
+  const formData = new FormData();
+  formData.append('result', result);
+  formData.append('shoulder', shoulder);
+  formData.append('bust', bust);
+  formData.append('waist', waist);
+  formData.append('hip', hip);
+
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', 'testja.php', true);
+  xhr.send(formData);
+
+
   // Assuming you want to display the result on the page
   window.location.href = result + ".html";
-
-  /*
-  // Create a new XMLHttpRequest object
+  
+  
+  /* // Create an XMLHttpRequest object
   const xhr = new XMLHttpRequest();
 
-  // Specify the PHP script URL
+  // Set the URL of the PHP file to send the request to
   const url = 'testja.php';
 
-  // Set the request method to POST
+  // Set the method to POST
   xhr.open('POST', url, true);
 
-  // Set the request header to specify the content type
+  // Set the responseType to JSON
+  xhr.responseType = 'json';
+
+  // Set the headers for the request
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-  // Define a function to handle the response from the PHP script
-  xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-          if (xhr.status === 200) {
-              // Request was successful, you can handle the response here
-              console.log(xhr.responseText);
-          } else {
-              // Request failed
-              console.error('Error: ' + xhr.status);
-          }
-      }
+  // Define a callback function to handle the response
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      console.log('Response received:', xhr.response);
+      // Handle the response data here
+    } else {
+      console.log('Error:', xhr.statusText);
+    }
   };
 
-  // Construct the data to be sent
-  const data = 'shoulder=' + encodeURIComponent(shoulder) +
-             '&bust=' + encodeURIComponent(bust) +
-             '&waist=' + encodeURIComponent(waist) +
-             '&hip=' + encodeURIComponent(hip) +
-             '&result=' + encodeURIComponent(result);
-  
-  // Send the request with the data
-  xhr.send(data);*/
+  // Send the request with the result data as a parameter
+  xhr.send('result=' + encodeURIComponent(result));*/
 
 }
