@@ -74,21 +74,11 @@
     
     <nav class="menu">
         <div class="main">
-            <a href="Home.php">
-                <i class="bi bi-house-door-fill"></i>
-            </a>
-            <a href="Like.php">
-                <i class="bi bi-heart"></i>
-            </a>
-            <a>
-                <i class="bi bi-chat-dots"></i>
-            </a>
-            <a>
-                <i class="bi bi-bell"></i>
-            </a>
-            <a>
-                <i class="bi bi-person"></i>
-            </a>
+            <a href="Home.php"><i class="bi bi-house-door-fill"></i></a>
+            <a href="Like.php"><i class="bi bi-heart"></i></a>
+            <a><i class="bi bi-chat-dots"></i></a>
+            <a><i class="bi bi-bell"></i></a>
+            <a href="userprofile.php"><i class="bi bi-person"></i></a>
         </div>
     </nav>
 
