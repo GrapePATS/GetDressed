@@ -39,7 +39,7 @@
         </div>
         <br>  
         <div style="text-align: center;">
-            <a href="/Getdressed/Main/Home.php" class="btn btn-primary" style="background-color: #C08552; display: inline-block; font-size: 24px;">Get started</a>
+            <a href="/Getdressed/Main/Main/Checkshape/checkbodyshape.php" class="btn btn-primary" style="background-color: #C08552; display: inline-block; font-size: 24px;">Get started</a>
         </div>
         <div>
         <a href="logout.php" class="btn btn-danger">Logout</a>
