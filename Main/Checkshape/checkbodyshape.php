@@ -14,11 +14,11 @@
 </head>
 <body>
     <div class="container">
-        <img src="logo/gd2.png" alt="get dressed logo" class="image">
+        <img src="../AppLogo.jpg" alt="get dressed logo" class="image">
     </div>
     <div class="container1">
         <h1>Enter your size</h1>
-        <img src="body.jpg" alt="body" class="bodyim">
+        <img src="../body.jpg" alt="body" class="bodyim">
         
 <form action="shapeDB.php" method="post" id="myForm"> <!-- Assuming your PHP script is in process_form.php -->
 <div class="input-size">
