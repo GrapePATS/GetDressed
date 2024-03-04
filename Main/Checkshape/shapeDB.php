@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'config.php'; // Make sure this file contains your database connection details
+require_once 'localdb.php'; // Make sure this file contains your database connection details
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -10,26 +10,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $waist = isset($_POST["waist"]) ? htmlspecialchars($_POST["waist"]) : '';
     $hip = isset($_POST["hip"]) ? htmlspecialchars($_POST["hip"]) : '';
     $result = isset($_POST["result"]) ? htmlspecialchars($_POST["result"]) : '';
-        
-        // Check if the connection is successful (assuming $objCon is defined in config.php)
-        if ($objCon->connect_error) {
-            die("Connection failed: " . $objCon->connect_error);
-        }
-       // Check if all fields are filled
-    if (empty($bust) || empty($shoulder) || empty($waist) || empty($hip)) {
-        $_SESSION['error'] = 'กรุณากรอกข้อมูลให้ครบถ้วน';
-        header("location: checkbodyshape.php");
-        exit;
-    }
-
     // Insert data into the database
-    else {
         $sql = "INSERT INTO shapedata (shoulder, bust, waist, hip, Shape) VALUES ('$shoulder', '$bust', '$waist', '$hip','$result')";
 
         if ($objCon->query($sql) === TRUE) {
             // Record added successfully
             echo "Record added successfully";
-            header('rectangle.html');
+            header('Location: rectangle.html');
             exit;
         } else {
             // Error occurred while inserting data
@@ -38,5 +25,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
             // Close the database connection
             $objCon->close();
-}
+
 ?>
